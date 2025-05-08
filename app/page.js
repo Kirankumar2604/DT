@@ -5,6 +5,7 @@ import Dashboard from "./(routes)/dashboard/page";
 export default function Home() {
   return (
     <div>
+    </dashboard>
     </div>
   );
 }
