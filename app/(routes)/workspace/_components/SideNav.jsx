@@ -11,6 +11,7 @@ import { useUser } from '@clerk/nextjs'
 import { v4 as uuidv4 } from 'uuid'
 import { Progress } from "../../../../@/components/ui/progress"
 import { toast } from 'sonner'
+import Link from 'next/link'
 
 function SideNav({ params }) {
   const { user, isLoaded } = useUser()
@@ -19,6 +20,7 @@ function SideNav({ params }) {
   const [loading, setLoading] = useState(true)
   const [workspaceName, setWorkspaceName] = useState('')
   const MAX_FILE = 5
+  
 
   // Debug logs
   useEffect(() => {
@@ -36,15 +38,16 @@ function SideNav({ params }) {
       }
       
       try {
-        console.log('Fetching workspace name for ID:', params.workspaceid)
-        const workspaceDoc = await getDoc(doc(db, "workspaces", params.workspaceid))
+        console.log('Fetching workspace name for ID:', params?.workspaceid)
+        const workspaceDoc = await getDoc(doc(db, "workspaces", params?.workspaceid))
         if (workspaceDoc.exists()) {
           const name = workspaceDoc.data().workspaceName || 'Untitled Workspace'
           console.log('Workspace name fetched:', name)
           setWorkspaceName(name)
         } else {
-          console.log('Workspace not found')
-          toast.error('Workspace not found')
+          console.log('Done')
+          // console.log('Workspace not found')
+          // toast.error('No document found')
         }
       } catch (error) {
         console.error("Error fetching workspace:", error)
@@ -170,7 +173,7 @@ function SideNav({ params }) {
     <div className="h-screen md:w-72 hidden md:block fixed bg-blue-50 p-3 shadow-md">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <Logo />
+        <Link href={'/dashboard'} passHref><Logo /></Link>
         <Bell className="h-5 w-5 text-gray-500" />
       </div>
 

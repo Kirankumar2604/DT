@@ -11,6 +11,7 @@ import { db } from '../../../config/firebaseConfig'
 import { useAuth, useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { v4 as uuidv4 } from 'uuid';
+import Link from 'next/link'
 
 
 function CreateWorkspace() {
@@ -94,7 +95,9 @@ function CreateWorkspace() {
                         <Button disabled={!workspaceName?.length || loading}
                             onClick={OnCreateWorkspace}
                         >create {loading && <Loader2Icon className='animate-spin ml-2' />}</Button>
+                        <Link href="/dashboard" passHref >
                         <Button variant={"outline"}>Cancel</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ function RichDocumentEditor({ params, setGeneratedTemplate }) {
         editedBy: user.primaryEmailAddress.emailAddress,
         lastModified: new Date().toISOString()
       });
-      toast.success('Document saved');
+      // toast.success('Document saved');
     } catch (error) {
       console.error('Error saving document:', error);
       toast.error('Failed to save document');

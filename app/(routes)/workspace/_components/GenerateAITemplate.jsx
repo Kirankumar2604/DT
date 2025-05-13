@@ -53,7 +53,7 @@ Now process the input accordingly.`;
             const blocks = categories.map(category => {
                 const [categoryTitle, ...items] = category.split('\n');
                 return [
-                    // Category header
+                      // Category header
                     {
                         id: Math.random().toString(36).substr(2, 9),
                         type: "header",
