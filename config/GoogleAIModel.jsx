@@ -8,15 +8,15 @@ const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-pro",
-    apiVersion: "v1",
+    model: "gemini-2.0-flash",
+    apiVersion: "v1beta",
 });
 
 const generationConfig = {
     temperature: 1,
     topP: 0.95,
     topK: 64,
-    maxOutputTokens: 65536,
+    maxOutputTokens: 2048,
 };
 
 const chatSession = model.startChat({
