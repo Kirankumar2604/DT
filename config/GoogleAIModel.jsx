@@ -16,7 +16,7 @@ const generationConfig = {
     temperature: 1,
     topP: 0.95,
     topK: 64,
-    maxOutputTokens: 2048,
+    maxOutputTokens: 20480,
 };
 
 const chatSession = model.startChat({
