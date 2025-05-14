@@ -7,12 +7,8 @@ import Hero from "./_components/Hero";
 export default function Home() {
   return (
     <div>
-<<<<<<< HEAD
-    <Dashboard/>
-=======
       <Header/>
       <Hero/>
->>>>>>> 5ee2238 (Update description of the change)
     </div>
   );
 }
