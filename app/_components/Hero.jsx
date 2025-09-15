@@ -113,7 +113,7 @@ function Hero() {
             {/* Footer */}
             <footer className="mt-10 text-center text-sm text-gray-600 dark:text-gray-400 ">
               <p>
-                Developed & Managed by <strong>Khushi Sharma</strong>, <strong>Kiran Kumar G</strong>, <strong>Kishan B G</strong>, <strong>Kishore</strong>, and <strong>M Adithiya</strong>
+                Developed & Managed by <strong>Kiran Kumar G</strong>
               </p>
             </footer>
           </div>
